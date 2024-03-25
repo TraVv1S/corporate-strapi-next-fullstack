@@ -60,6 +60,18 @@ export interface ElementsFooterSection extends Schema.Component {
   };
 }
 
+export interface ElementsHeroFeatures extends Schema.Component {
+  collectionName: 'components_elements_hero_features';
+  info: {
+    displayName: 'Hero features';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
 export interface ElementsLogos extends Schema.Component {
   collectionName: 'components_elements_logos';
   info: {
@@ -323,6 +335,7 @@ export interface SectionsHero extends Schema.Component {
     description: Attribute.String & Attribute.Required;
     picture: Attribute.Media & Attribute.Required;
     buttons: Attribute.Component<'links.button-link', true>;
+    features: Attribute.Component<'elements.hero-features', true>;
   };
 }
 
@@ -481,6 +494,7 @@ declare module '@strapi/types' {
       'elements.feature-row': ElementsFeatureRow;
       'elements.feature': ElementsFeature;
       'elements.footer-section': ElementsFooterSection;
+      'elements.hero-features': ElementsHeroFeatures;
       'elements.logos': ElementsLogos;
       'elements.notification-banner': ElementsNotificationBanner;
       'elements.plan': ElementsPlan;

@@ -28,6 +28,11 @@
       "type": "component",
       "repeatable": true,
       "component": "links.button-link"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.hero-features"
     }
   }
 }

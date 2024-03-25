@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_elements_hero_features",
+  "info": {
+    "displayName": "Hero features",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
