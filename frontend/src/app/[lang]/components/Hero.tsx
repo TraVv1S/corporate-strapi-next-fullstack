@@ -12,6 +12,12 @@ interface Button {
   newTab: boolean;
 }
 
+interface HeroFeat {
+  id: string;
+  title: string;
+  description: string;
+}
+
 interface Picture {
   data: {
     id: string;
@@ -30,6 +36,7 @@ interface HeroProps {
     description: string;
     picture: Picture;
     buttons: Button[];
+    herofeats: HeroFeat[];
   };
 }
 
@@ -65,6 +72,8 @@ export default function Hero({ data }: HeroProps) {
               </Link>
             ))}
           </div>
+          
+          
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <Image
@@ -77,6 +86,17 @@ export default function Hero({ data }: HeroProps) {
             height={600}
           />
         </div>
+        
+      </div>
+      <div>
+        <ol className="container mx-auto my-6 grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {data.herofeats.map((feat: HeroFeat, i: number) => (
+            <li key={i}>
+              <h3>{feat.title}</h3>
+                <p>{feat.description}</p>
+            </li>))
+          }
+        </ol>
       </div>
     </section>
   );

@@ -29,7 +29,7 @@
       "repeatable": true,
       "component": "links.button-link"
     },
-    "features": {
+    "herofeats": {
       "type": "component",
       "repeatable": true,
       "component": "elements.hero-features"
