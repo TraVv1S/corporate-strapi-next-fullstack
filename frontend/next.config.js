@@ -5,8 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
+        // hostname: 'localhost',
+        // port: '1337',
+        hostname: '45.142.214.36',
         pathname: '/uploads/**',
       },
       {
