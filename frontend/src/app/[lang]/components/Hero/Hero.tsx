@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import HighlightedText from "./HighlightedText";
-import { getStrapiMedia } from "../utils/api-helpers";
-import { renderButtonStyle } from "../utils/render-button-style";
+import HighlightedText from "../HighlightedText";
+import { getStrapiMedia } from "../../utils/api-helpers";
+import { renderButtonStyle } from "../../utils/render-button-style";
+import styles from './Hero.module.css'
 
 interface Button {
   id: string;
@@ -44,8 +45,10 @@ export default function Hero({ data }: HeroProps) {
   const imgUrl = getStrapiMedia(data.picture.data.attributes.url);
 
   return (
-    <section className="dark:bg-black dark:text-gray-100">
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+    <section className="dark:text-gray-100"
+      style={{background: `no-repeat url('${imgUrl}')`, backgroundSize:"cover", backgroundPosition: "center center"}}
+    >
+      <div className={styles.container}>
         <div className="flex flex-col justify-center p-6 text-center rounded-lg lg:max-w-md xl:max-w-lg lg:text-left">
           <HighlightedText
             text={data.title}
@@ -75,7 +78,7 @@ export default function Hero({ data }: HeroProps) {
           
           
         </div>
-        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+        {/* <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
           <Image
             src={imgUrl || ""}
             alt={
@@ -85,19 +88,19 @@ export default function Hero({ data }: HeroProps) {
             width={600}
             height={600}
           />
-        </div>
-        
-      </div>
-      <div>
+        </div> */}
+        <div>
         <ol className="container mx-auto my-6 grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {data.herofeats.map((feat: HeroFeat, i: number) => (
-            <li key={i}>
+            <li key={i} className="p-6">
               <h3>{feat.title}</h3>
                 <p>{feat.description}</p>
             </li>))
           }
         </ol>
       </div>
+      </div>
+      
     </section>
   );
 }

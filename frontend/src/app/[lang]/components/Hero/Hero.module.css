@@ -1,0 +1,37 @@
+.container {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    padding: 1.5rem; /* Это эквивалент p-6 из Tailwind CSS */
+    margin: auto;
+    color: #ffffff;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-top: 3rem; /* Это эквивалент sm:py-12 из Tailwind CSS */
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+        padding-top: 6rem; /* Это эквивалент lg:py-24 из Tailwind CSS */
+        /* flex-direction: row;
+        justify-content: space-between; */
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+        
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+        
+    }
+}
